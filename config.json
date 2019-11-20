@@ -1,0 +1,8 @@
+{
+    "db":{
+        "host": "cluster0-fwwvy.mongodb.net",
+        "dbname": "videoteka",
+        "username": "dev",
+        "password": "123dev!"
+    }
+}
