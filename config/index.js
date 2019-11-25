@@ -1,7 +1,6 @@
+const fs = require('fs')
 
-const fs = require('fs');
-
-const configFile = './config.json';
+const configFile = './config.json'
 var conf = null;
 
 const getConfig = (section) => {

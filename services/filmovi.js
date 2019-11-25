@@ -1,31 +1,29 @@
 const express = require('express');
-const app = express();
-const filmovi = require('../handlers/filmovi');
+const bodyParser = require('body-parser');
 
-//connection from db/connection(mongodb with mongoose)
-const config = require('../config/index.js')
-const DBConnection = require('../db/connection');
+const config = require('../config/index.js');
+const DBConn = require('../db/connection');
+const filmovi = require('../handlers/filmovi');
 
 
 var c = config.getConfig("db");
-DBConnection.initialize(c);
+DBConn.init(c);
 
-const bodyParser = require("body-parser")
-app.use(bodyParser.json())
-const url = '/app/v1/filmovi'
+const api = express();
+api.use(bodyParser.json());
 
-app.get(url, filmovi.getAll);
-app.get(url + '/:id', filmovi.getOne);
-app.post(url, filmovi.save);
-app.put(url + '/:id', filmovi.replace);
-app.patch(url + '/:id', filmovi.update);
-app.delete(url + '/:id', filmovi.remove);
+api.get('/api/v1/filmovi', filmovi.getAll);
+api.get('/api/v1/filmovi/:id', filmovi.getOne);
+api.post('/api/v1/filmovi', filmovi.save);
+api.put('/api/v1/filmovi/:id', filmovi.replace);
+api.patch('/api/v1/filmovi/:id', filmovi.update);
+api.delete('/api/v1/filmovi/:id', filmovi.remove);
 
-app.listen(8080, (err) => {
-    if (err) {
-        console.log("Server could not start");
+api.listen(8080, err => {
+    if(err){
+        console.log('could not start server');
         console.log(err);
         return;
     }
-    console.log("Server started successfully");
-}) 
+    console.log('server started successfully on port 8080');
+});
