@@ -1,7 +1,6 @@
 {
   "name": "mongo",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,5 +12,15 @@
     "express": "^4.17.1",
     "mongoose": "^5.7.12",
     "node-input-validator": "^4.1.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petargrozdanov/node-mongoo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/petargrozdanov/node-mongoo/issues"
+  },
+  "homepage": "https://github.com/petargrozdanov/node-mongoo#readme",
+  "description": ""
 }

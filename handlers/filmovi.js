@@ -6,8 +6,8 @@ const getAll = (req, res) => {
         res.status(200).send(data);
     })
     .catch(err => {
-        res.status(500).send(err);
-    });
+        res.status(500).send(err);  
+    }); 
 }
 
 const getOne = (req, res) => {

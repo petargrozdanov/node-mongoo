@@ -10,7 +10,7 @@ const User = mongoose.model(
     })
 );
 
-const createUser = (data) => {
+const createUser = (data) => { 
     return new Promise((success, fail) => {
         var user = new User(data);
         user.save(err => {
